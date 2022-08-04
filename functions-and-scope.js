@@ -1,3 +1,4 @@
+
 // Je gaat functies schrijven die we kunnen hergebruiken om een lijst met eindcijfers van studenten te checken. Je zult over de cijfers heen moeten itereren (hoe pak je dat aan?),
 // maar ook een manier moeten vinden om hetgeen dat je verzamelt ergens te bundelen. Op deze manier zul je ontdekken hoe je omgaat met scope. Pak vooral het hoofdstuk op EdHub over for-loops er nog eens bij!
 // Tip: je mag hier geen ingebouwde object methoden gebruiken, dus daar hoef je niet naar te kijken.
@@ -14,6 +15,24 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan bijhouden?
 // Log het antwoord in de terminal.
 
+// Stap1 - aanmaken variabele aantal cumlaude geslaagde studenten
+// Stap2 - itereren door lijst cijfers
+// Stap3 - check of het cijfer hoger of gelijk is aan een 8
+// Stap4 - wanneer het cijfer hoger of gelijk is aan 8 verhoog aangemaakte variabele
+// stap5 - log aantal cumluade geslaagde studenten
+
+
+    let numberOfCumlaude = 0;
+    for (let i = 0; i < grades.length; i++) {
+        if(grades[i] >= 8){
+            numberOfCumlaude += 1;
+        }
+    }
+console.log(numberOfCumlaude);
+
+
+
+
 // ---- Verwachte uitkomst: 6
 
 
@@ -21,6 +40,20 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
 // Schrijf een functie genaamd cumLaude, die een array van cijfers verwacht (zoals grades) en het aantal Cum laude studenten teruggeeft. Gebruik hiervoor jouw antwoord van 1a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array met eindcijfers willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+function cumLaude (gradeList){
+    let count = 0;
+    for (let i = 0; i < gradeList.length; i++) {
+        if(gradeList[i] >= 8){
+            count += 1;
+        }
+    }
+    return count;
+}
+
+console.log(cumLaude(grades));
+console.log(cumLaude([6, 4, 5]));
+console.log(cumLaude([8, 9, 4, 6, 10]));
 
 // ---- Verwachte uitkomsten:
 // cumLaude(grades) geeft 6
