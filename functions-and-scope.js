@@ -29,6 +29,7 @@ const grades = [9, 8, 5, 7, 7, 4, 9, 8, 8, 3, 6, 8, 5, 6];
         }
     }
 console.log(numberOfCumlaude);
+console.log("einde opdrcht 1a")
 
 
 
@@ -54,6 +55,7 @@ function cumLaude (gradeList){
 console.log(cumLaude(grades));
 console.log(cumLaude([6, 4, 5]));
 console.log(cumLaude([8, 9, 4, 6, 10]));
+console.log("einde opdracht 1b")
 
 // ---- Verwachte uitkomsten:
 // cumLaude(grades) geeft 6
@@ -73,6 +75,18 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 // * Hoe zorgt ik ervoor dat ik alle waardes uit de array kan langslopen, ook als de array wel 100 entries zou bevatten?
 // Log het antwoord in de terminal.
 
+// Stap1 - declareer variabele average
+// Stap2 - itereren door de lijst
+// Stap3 - alle cijfers bij elkaar optellen en delen door het aantal items in de lijst
+//stap 4 - log het gemiddelde
+
+let average = 0;
+for (let i = 0; i < grades.length; i++) {
+    average += (grades[i]) / grades.length;
+}
+console.log(average);
+console.log("einde opdracht 2a")
+
 // ---- Verwachte uitkomst: 6.642857142857143
 
 
@@ -80,6 +94,20 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 // Schrijf een functie genaamd averageGrade, die een array van cijfers verwacht (zoals grades) en het gemiddelde cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 2a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+
+function averageGrade(gradesArray){
+    let total = 0;
+    for (let i = 0; i < gradesArray.length; i++) {
+        total += gradesArray[i];
+    }
+    return total / gradesArray.length;
+}
+const averageOne = averageGrade(grades);
+const averageTwo = averageGrade([6, 4, 5]);
+const averageThree = averageGrade([8, 9, 4, 6, 10]);
+
+console.log(averageOne, averageTwo, averageThree);
+console.log("einde 2b")
 
 // ---- Verwachte uitkomsten:
 // averageGrade(grades) geeft 6.642857142857143
@@ -90,7 +118,8 @@ console.log(cumLaude([8, 9, 4, 6, 10]));
 /* 2c: Afronden op twee decimalen */
 // Zorg ervoor dat het gemiddelde cijfer dat wordt teruggegeven uit de functie netjes wordt afgerond op twee decimalen.
 // Tip: Google is your best friend!
-
+console.log(averageOne.toFixed(2));
+console.log("einde 2c")
 
 
 
