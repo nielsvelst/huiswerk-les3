@@ -125,6 +125,7 @@ console.log("einde 2c")
 
 /* Bonusopdracht: hoogste cijfer */
 
+
 /* 3a: Script schrijven  */
 // Schrijf een script die op basis van de grades array (hierboven) checkt wat het hoogst behaalde cijfer is. Je mag hier geen bestaande methoden voor gebruiken. Schrijf de stapjes eerst uit en vraag jezelf de volgende dingen af:
 // * Hoe kan ik iedere waarde van de array langsgaan?
@@ -132,6 +133,17 @@ console.log("einde 2c")
 // * Hoe zorgt ik ervoor dat wanneer ik een cijfer tegenkom die aan de conditie voldoet, ik dit ergens kan opslaan?
 // Log het antwoord in de terminal.
 
+// stap1 - declareer highest grade
+// stap2 - itereer door de gradesArray
+// stap3 - check of het huideige cijfer hoger is dan wat al gedefinieerd is en overschijf als dat zo is
+// stap4 - return/log het hoogste cijfer
+let highGrade = 0;
+for (let i = 0; i < grades.length; i++) {
+    if (grades[i] > highGrade){
+        highGrade = grades[i];
+    }
+}
+console.log(highGrade)
 // ---- Verwachte uitkomst: 9
 
 
@@ -139,7 +151,19 @@ console.log("einde 2c")
 // Schrijf een functie genaamd highestGrade, die een array van cijfers verwacht (zoals grades) en het hoogste cijfer teruggeeft. Gebruik hiervoor jouw antwoord van 3a.
 // Zorg ervoor dat jouw functie ook werkt als we een andere array willen checken, zoals bijvoorbeeld: [6, 4, 5] of [8, 9, 4, 6, 10].
 // Log het antwoord in de terminal.
+function highestGrade(gradesArray){
+    let gradeHighest = 0;
+    for (let i = 0; i < gradesArray.length; i++) {
+        if (gradesArray[i] > gradeHighest){
+            gradeHighest = gradesArray[i];
+        }
+    }
+    return gradeHighest;
+}
 
+console.log("het hoogste cijfer is een " + highestGrade(grades));
+console.log("het hoogste cijfer is een " + highestGrade([6, 4, 5]));
+console.log("het hoogste cijfer is een " + highestGrade([8, 9, 4, 6, 10]));
 // ---- Verwachte uitkomsten:
 // highestGrade(grades) geeft 9
 // highestGrade([6, 4, 5]) geeft 6
